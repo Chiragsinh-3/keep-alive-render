@@ -5,10 +5,10 @@ const axios = require('axios');
 const URLs = process.env.URLS.split(',');
 
 const CronExpression = {
-  EVERY_14_MINUTES: '0 */14 * * * *',
+  EVERY_5_MINUTES: '*/5 * * * *',
 };
 
-cron.schedule(CronExpression.EVERY_14_MINUTES, async () => {
+cron.schedule(CronExpression.EVERY_5_MINUTES, async () => {
   await Promise.all(URLs.map((url) => getHealth(url)));
 });
 
